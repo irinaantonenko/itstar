@@ -1,0 +1,107 @@
+/* screen width for media queries*/
+
+@mixin _1920 {
+    @media (min-width: 1920px) {
+        @content;
+    }
+}
+@mixin _1440 {
+    @media (min-width: 1440px) {
+        @content;
+    }
+}
+@mixin _1280min {
+    @media (min-width: 1270px) {
+        @content;
+    }
+}
+@mixin _1280 {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin _1024 {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin _768 {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin _768min {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin _600 {
+    @media (max-width: 600px){
+        @content;
+    }
+}
+
+@mixin _475 {
+    @media (max-width: 475px) {
+        @content;
+    }
+}
+@mixin _425 {
+    @media (max-width: 425px) {
+        @content;
+    }
+}
+
+/*common styles*/
+@mixin flex-c-c {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+@mixin flex-c {
+    display: flex;
+    align-items: center;
+}
+
+@mixin wrapper {
+	width: 25rem;
+	
+    @include _1280min {
+        width: 50rem;
+	}
+    @include _1280 {
+        width: 46rem;
+	}
+    @include _768 {
+        width: 40rem;
+	}
+    @include _600 {
+        width: 30rem;
+	}
+    @include _425 {
+        width: 25rem;
+	}
+}	
+
+@mixin font-small {
+	font-size: 1rem;
+    line-height: 2rem;
+    @include _1280min {
+        font-size: 1.17rem;
+    }
+}
+@mixin font-middle {
+    font-size: 1.33rem;
+    line-height: 2rem;
+}
+@mixin font-big {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;  
+    @include _1280min {
+        font-size: 2rem;
+        line-height: 2.67rem;  
+    }    
+}
+
