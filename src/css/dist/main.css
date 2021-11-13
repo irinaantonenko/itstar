@@ -57,6 +57,14 @@
   align-items: center;
   justify-content: center;
   margin: 0 100px 0 60px;
+  width: 39px;
+  height: 62px;
+  cursor: pointer;
+}
+@media (hover) {
+  .header__logo:hover {
+    opacity: 0.5;
+  }
 }
 .header__link {
   cursor: pointer;
@@ -69,6 +77,11 @@
 }
 .header__link--active {
   color: #C08D5D;
+}
+@media (hover) {
+  .header__link:hover {
+    opacity: 0.5;
+  }
 }
 .header__burger {
   display: none;
@@ -127,16 +140,16 @@
   position: relative;
 }
 .home__wrap {
-  margin-top: 197px 0 82px;
-  background: red;
-  height: 100%;
   width: 100%;
+  min-height: 100vh;
   position: absolute;
+  z-index: 2;
 }
 .home__image {
   position: absolute;
   top: 0;
   right: 25px;
+  z-index: 3;
 }
 .home__picture {
   height: 915px;
@@ -144,4 +157,101 @@
 .home__container {
   max-width: 1320px;
   width: 100%;
+  min-height: calc(100vh - 280px);
+  background: #FFFAF3;
+  z-index: 2;
+  margin: 197px auto 82px;
+  position: relative;
+}
+.home__content {
+  margin: 85px 665px 85px 120px;
+  position: absolute;
+}
+.home__div {
+  display: flex;
+  align-items: flex-end;
+}
+.home__subtitle {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 67px;
+  letter-spacing: 0;
+  margin-right: 14px;
+}
+.home__logo {
+  width: 45.21px;
+  height: 71.98px;
+  margin-bottom: 10px;
+}
+.home__title {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 93px;
+  letter-spacing: 0.06em;
+  color: #3F4042;
+  margin-bottom: 21px;
+}
+.home__text {
+  font-family: "Avenir", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.06em;
+  color: #3F4042;
+  margin: 27px 0 75px;
+}
+.home__button {
+  border: 2px solid #C08D5D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 197px;
+  height: 66.73px;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (hover) {
+  .home__button:hover {
+    opacity: 0.5;
+  }
+}
+.home__link {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  color: #3F4042;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0 10px;
+}
+.home__arrow {
+  background-color: #C08D5D;
+  width: 59px;
+  height: 66.73px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home__scroll {
+  position: absolute;
+  z-index: 4;
+  bottom: 150px;
+  left: calc(50% - 11px);
+}
+@media (hover) {
+  .home__scroll:hover {
+    opacity: 0.5;
+  }
+}
+.home__shadow {
+  width: calc(100% - 230px);
+  height: 134px;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 8%;
+  background: rgba(192, 141, 93, 0.2);
+  filter: blur(100px);
 }
