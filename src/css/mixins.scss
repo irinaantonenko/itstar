@@ -1,22 +1,17 @@
 /* screen width for media queries*/
 
-@mixin _1920 {
-    @media (min-width: 1920px) {
+@mixin _1600 {
+    @media (min-width: 1600px) {
         @content;
     }
 }
 @mixin _1440 {
-    @media (min-width: 1440px) {
+    @media (max-width: 1440px) {
         @content;
     }
 }
-@mixin _1280min {
-    @media (min-width: 1270px) {
-        @content;
-    }
-}
-@mixin _1280 {
-    @media (max-width: 1280px) {
+@mixin _1370 {
+    @media (max-width: 1370px) {
         @content;
     }
 }
@@ -30,12 +25,6 @@
         @content;
     }
 }
-@mixin _768min {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
 @mixin _600 {
     @media (max-width: 600px){
         @content;
@@ -54,54 +43,85 @@
 }
 
 /*common styles*/
-@mixin flex-c-c {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-}
 @mixin flex-c {
     display: flex;
     align-items: center;
 }
+@mixin flex-c-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-c-btw {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 @mixin wrapper {
-	width: 25rem;
-	
-    @include _1280min {
-        width: 50rem;
+	max-width: 110rem;    
+    @include _1600 {
+        min-width: 125rem;
+	}        
+    @include _1370 {
+        max-width: 83rem;
 	}
-    @include _1280 {
-        width: 46rem;
+    @include _1024 {
+        max-width: 62rem;
 	}
     @include _768 {
-        width: 40rem;
+        max-width: 50rem;
 	}
     @include _600 {
-        width: 30rem;
+        max-width: 34rem;
 	}
     @include _425 {
-        width: 25rem;
+        max-width: 25rem;
 	}
 }	
 
-@mixin font-small {
-	font-size: 1rem;
-    line-height: 2rem;
-    @include _1280min {
-        font-size: 1.17rem;
+@mixin font-subtitle {
+	font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 4.17rem;
+    line-height: 5.58rem;
+    letter-spacing: 0;
+    @include _768 {
+        font-size: 3rem;
     }
 }
-@mixin font-middle {
-    font-size: 1.33rem;
-    line-height: 2rem;
-}
-@mixin font-big {
+@mixin font-title {
+    font-family: 'Playfair Display';
     font-weight: bold;
+    font-size: 5.83rem;
+    line-height: 7.75rem;
+    letter-spacing: 0.06em;
+    @include _768 {
+        font-size: 4rem;
+    }
+}
+@mixin font-text {
+    font-weight: normal;
     font-size: 1.5rem;
-    line-height: 2rem;  
-    @include _1280min {
-        font-size: 2rem;
-        line-height: 2.67rem;  
-    }    
+    line-height: 2.25rem;
+    letter-spacing: 0.06em;    
+}
+@mixin font-btn {
+    font-size: 1.67rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.06em;
+}
+@mixin font-link {
+    font-weight: 600;
+    font-size: 1.67rem;
+    line-height: 2.25rem;
+}
+
+@mixin hover {
+    @media (hover) {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
 }
 
